@@ -25,3 +25,7 @@ png("Wykresy/wordcloud_version2.png", width=1280,height=800)
 wordcloud(ap.d2$word,ap.d2$freq, scale=c(8,.2),min.freq=3,
 					max.words=Inf, random.order=FALSE, rot.per=.15, colors=pal2)
 dev.off()
+
+
+save(ap.d_sorted, file = "Dane/ap.d_sorted.rda")
+save(ap.d_sorted, file = "Aplikacja/ap.d_sorted.rda")

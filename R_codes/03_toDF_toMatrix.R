@@ -13,3 +13,9 @@ colnames(mat) <- DTM95$dimnames$Terms
 
 
 as.data.frame(as.matrix(mat)) -> DTM_df
+
+save(DTM, file = "Dane/DTM.rda")
+save(DTM95, file = "Dane/DTM95.rda")
+save(DTM99, file = "Dane/DTM99.rda")
+save(DTM_df, file = "Dane/DTM_df.rda")
+save(corpus, file = "Dane/corpus.rda")

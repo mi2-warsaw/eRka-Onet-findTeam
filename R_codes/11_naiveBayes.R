@@ -1,6 +1,6 @@
 load('Dane/train.rda')
 load('Dane/train_interpunction.rda')
-load('Dane/test_Boruta.rda')
+load('Dane/train_Boruta.rda')
 load('Dane/test.rda')
 load('Dane/test_interpunction.rda')
 load('Dane/test_Boruta.rda')
@@ -19,5 +19,5 @@ bayes_prawd_test_interpunction_Boruta <- predict(bayesAll_interpunction_Boruta, 
 library(ROCR)
 
 save(bayes_prawd_test, file = "Predykcje/bayes_prawd_test.rda")
-save(bayes_prawd_test, file = "Predykcje/bayes_prawd_test_interpunction.rda")
-save(bayes_prawd_test, file = "Predykcje/bayes_prawd_test_interpunction_Boruta.rda")
+save(bayes_prawd_test_interpunction, file = "Predykcje/bayes_prawd_test_interpunction.rda")
+save(bayes_prawd_test_interpunction_Boruta, file = "Predykcje/bayes_prawd_test_interpunction_Boruta.rda")

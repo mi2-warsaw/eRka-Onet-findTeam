@@ -1,0 +1,11 @@
+library(randomForest)
+library(ROCR)
+RF_Boruta = randomForest(train_Boruta$Classes~., data = train_Boruta[,1:22])
+RF_pred = predict(RF_Boruta, newdata = test_Boruta, type = "response")
+RF_prediction = prediction(RF_pred, test_Boruta$Classes)
+RF_perf = performance(RF_prediction, "tpr", "fpr")
+performance(RF_prediction, "auc")@y.values[[1]]
+plot(RF_perf)
+table(test_Boruta$Classes, RF_pred>0.6)
+Rf_results = data.frame(Id = test$uuid_h2, Prediction = RF_pred)
+save(Rf_results, file = "Predykcje/RandomForest_Prediction.rda")

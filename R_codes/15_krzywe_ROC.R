@@ -21,7 +21,8 @@ roc2 <- function(pred_prawdopod, prawdziwe_klasy,...){
 }
 
 
-kolory <- colors()[sample(1:640,6)]
+
+kolory <- brewer.pal(8,"Dark2")
 #roc(bayes_prawd_test, test$Classes, lty=5, lwd=2, main="Porównanie krzywych ROC")
 roc(bayes_prawd_test_interpunction, test$Classes, lty=5, lwd=2, main="Porównanie krzywych ROC")
 roc2(bayes_prawd_test_interpunction_Boruta, test$Classes, col=kolory[2],lty=5, lwd=2)
@@ -33,11 +34,12 @@ roc2(Rf_results[,2], test$Classes, col=kolory[6],lty=5, lwd=2)
 roc2(test_pred_prob, test$Classes, col=kolory[7],lty=5, lwd=2)
 
 
+
 legend(0.6,0.5, 
 			 c("Bayes_A","Bayes_B",
 			 	"LDA_A","LDA_B","GLM_B",
 			 	"Random Forests",	"SVM Linear"),
 			 ,lty=2,
 			 lwd=2,
-			 col=c("red",kolory[1:6]))
+			 col=c("red",kolory[2:7]))
 

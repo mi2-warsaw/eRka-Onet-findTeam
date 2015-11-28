@@ -24,5 +24,16 @@ roc2 <- function(pred_prawdopod, prawdziwe_klasy,...){
 kolory <- colors()[sample(1:640,6)]
 roc(bayes_prawd_test, test$Classes, lty=5, lwd=2, main="Porównanie krzywych ROC")
 roc2(bayes_prawd_test_interpunction, test$Classes, col=kolory[1],lty=5, lwd=2)
-roc2(bayes_prawd_test_interpunction_Boruta, test$Classes, col=kolory[1],lty=5, lwd=2)
+roc2(bayes_prawd_test_interpunction_Boruta, test$Classes, col=kolory[2],lty=5, lwd=2)
+roc2(lda_test, test$Classes, col=kolory[3],lty=5, lwd=2)
+roc2(lda_test_interpunction, test$Classes, col=kolory[4],lty=5, lwd=2)
+roc2(lda_test_interpunction_Boruta, test$Classes, col=kolory[5],lty=5, lwd=2)
+
+
+legend(0.6,0.5, 
+			 c("Bayes_ALL","Bayes_ALL_int","Bayes_Boruta_int")#,
+			 	#"LDA_ALL","LDA_ALL_int","LDA_Boruta_int"),
+			 ,lty=2,
+			 lwd=2,
+			 col=c("red",kolory[1:5]))
 

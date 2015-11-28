@@ -13,3 +13,9 @@ Tags_table <- table(DTM_tagged$uuid_h2, as.character(DTM_tagged$Tags))
 Classes<-apply(as.matrix(Tags_table),MARGIN = 1, function(x){ifelse(x[1]>x[2],0,ifelse(x[1]==x[2],NA,1))})
 
 table(Classes,useNA = "always")
+
+cos <- data.frame(names(Classes),Classes)
+inner_join(DTM_tagged, cos, by = c("uuid_h2"="names.Classes."))%>%
+	filter(!is.na(Classes)) %>% 
+	select(-Tags) %>%
+	unique()->DTM_tagged_clean

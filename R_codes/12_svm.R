@@ -10,4 +10,4 @@ test_pred_prob <- attr(test_pred_raw,"probabilities")[,2]
 test_pred <- ifelse(test_pred_prob>0.5,1,0)
 sum(test_pred == test_labels)/length(test_labels)
 
-save(test_pred,file="Dane/svm_test_Boruta.rda")
+save(test_pred_prob,file="Dane/svm_test_Boruta.rda")

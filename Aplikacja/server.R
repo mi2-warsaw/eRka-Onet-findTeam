@@ -1,22 +1,27 @@
-
-# This is the server logic for a Shiny web application.
-# You can find out more about building applications with Shiny here:
-#
-# http://shiny.rstudio.com
-#
-
 library(shiny)
-
+require(XML)
+require(tm)
+require(wordcloud)
+require(RColorBrewer)
+library(shiny)
+library(dplyr)
+load("ap.d_sorted.rda")
+pal2 <- brewer.pal(8,"Dark2")
 shinyServer(function(input, output) {
+	
+	
+	data <- reactive({
+		kwantyl1 <- quantile(ap.d_sorted$freq, input$kwantyle[1])
+		kwantyl2 <- quantile(ap.d_sorted$freq, input$kwantyle[2])
+		ap.d_sorted %>%
+			filter(freq >= kwantyl1,
+						 freq <= kwantyl2)
+	})
 	
 	output$distPlot <- renderPlot({
 		
-		# generate bins based on input$bins from ui.R
-		x    <- faithful[, 2]
-		bins <- seq(min(x), max(x), length.out = input$bins + 1)
-		
-		# draw the histogram with the specified number of bins
-		hist(x, breaks = bins, col = 'darkgray', border = 'white')
+		wordcloud(data$word,data$freq, scale=c(8,.2),min.freq=3,
+							max.words=Inf, random.order=FALSE, rot.per=.15, colors=pal2)
 		
 	})
 	

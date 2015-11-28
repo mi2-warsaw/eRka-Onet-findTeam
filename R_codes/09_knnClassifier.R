@@ -21,7 +21,12 @@ test_labels <- test_Boruta$Classes
 
 test_pred <- knn(train_Boruta, test_Boruta, cl = train_labels, k=5)
 
-CrossTable(test_labels,test_pred)
+save(test_pred,file="Dane/knn_test_Boruta.rda")
+
+
+#CrossTable(test_labels,test_pred)
+
+#Scaled is not working well!
 
 train_Boruta %>% select(-Classes) -> train_Boruta_scaled
 
@@ -43,6 +48,7 @@ CrossTable(test_pred_scaled,test_labels)
 #Percentage of well clasified cases:
 sum(test_labels==test_pred)/length(test_labels)
 sum(test_labels==test_pred_scaled)/length(test_labels)
+
 
 
 

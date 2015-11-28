@@ -1,7 +1,7 @@
 library(tm)
 #install.packages("pbapply")
 library("pbapply")
-Dir = DirSource(directory = 'Dane', encoding = "UTF-8")
+Dir = DirSource(directory = 'Dane', encoding = "Windows-1250")
 stopwords = readLines("Polish_stopwords.txt")
 stopwords <- tolower(stopwords)
 corpus = VCorpus(Dir)

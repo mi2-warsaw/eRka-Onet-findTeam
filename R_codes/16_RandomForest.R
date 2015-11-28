@@ -8,4 +8,4 @@ performance(RF_prediction, "auc")@y.values[[1]]
 plot(RF_perf)
 table(test_Boruta$Classes, RF_pred>0.6)
 Rf_results = data.frame(Id = test$uuid_h2, Prediction = RF_pred)
-save(Rf_results, file = "Dane/RandomForest_Prediction.rda")
+save(Rf_results, file = "Predykcje/RandomForest_Prediction.rda")

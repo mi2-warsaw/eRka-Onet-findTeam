@@ -33,13 +33,24 @@ roc2(GLM_Boruta[,2], test$Classes, col=kolory[5],lty=5, lwd=2)
 roc2(Rf_results[,2], test$Classes, col=kolory[6],lty=5, lwd=2)
 roc2(test_pred_prob, test$Classes, col=kolory[7],lty=5, lwd=2)
 
+all_classificators <- data.frame(bayes_prawd_test_interpunction,
+																 bayes_prawd_test_interpunction_Boruta,
+																 lda_test_interpunction,
+																 lda_test_interpunction_Boruta,
+																 GLM_Boruta[,2],
+																 Rf_results[,2],
+																 test_pred_prob)
+
+rowMeans(all_classificators) -> srednie
+save(srednie, file = "Predykcje/srednie.rda")
+roc2(srednie, test$Classes, col=kolory[8],lty=5, lwd=2)
 
 
 legend(0.6,0.5, 
 			 c("Bayes_A","Bayes_B",
 			 	"LDA_A","LDA_B","GLM_B",
-			 	"Random Forests",	"SVM Linear"),
+			 	"Random Forests",	"SVM Linear", "Srednie"),
 			 ,lty=2,
 			 lwd=2,
-			 col=c("red",kolory[2:7]))
+			 col=c("red",kolory[2:8]))
 

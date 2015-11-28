@@ -36,10 +36,15 @@ getTabloidSignRatio <- function(filename){
   ratio <- countratioicient(endSignTable)
   return(ratio)
 }
+setwd("/Users/a/Moje/Nauka/Tabloidy/prepared_data2/docs_collection_raw/")
 
-rawFiles <- list.files(pattern="18*.txt",full.names=T,recursive=F)
+IDList <- DTM_tagged_clean$uuid_h2
+IDList <- paste(IDList, ".txt",sep="")
+ratioVector <-c()
 
-for (i in 1:5) {
-  ratio <- getTabloidSignRatio(rawFiles[i])
-  print(ratio)
+for (i in 1:length(IDList)){
+	ratioVector <- c(ratioVector, getTabloidSignRatio(IDList[i]))
+	if(i)
 }
+EndSignRatio <- ratioVector
+DTM_tagged_interpunction <- cbind(DTM_tagged_clean,EndSignRatio)

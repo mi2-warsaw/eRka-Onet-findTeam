@@ -37,7 +37,7 @@ table(Bor_pred>0.55, test_Boruta$Classes)
 performance(Bor_prediction, "auc")@y.values[[1]]
 
 GLM_Boruta = data.frame(Id = test$uuid_h2, Prediction = Bor_pred)
-write.csv(x = GLM_Boruta, file = "Predykcje/GLM")
+save(x = GLM_Boruta, file = "Predykcje/GLM.rda")
 
 
 Glin_best_Bor = cv.glmnet(x = as.matrix(train_Boruta[,1:22]),

@@ -7,17 +7,21 @@ mat <- sparseMatrix(i=DTM99$i, j=DTM99$j, x=DTM99$v,
 										dims=c(DTM99$nrow, DTM99$ncol))
 
 ap.m <- as.matrix(mat)
-ap.v <- sort(colSums(ap.m),decreasing=TRUE)
+ap.v <- colSums(ap.m)
 ap.d <- data.frame(word = DTM99$dimnames$Terms,freq=ap.v)
 table(ap.d$freq)
 pal2 <- brewer.pal(8,"Dark2")
-png("wordcloud_version1.png", width=1280,height=800)
+png("Wykresy/wordcloud_version1.png", width=1280,height=800)
 wordcloud(ap.d$word,ap.d$freq, scale=c(8,.2),min.freq=3,
 					max.words=Inf, random.order=FALSE, rot.per=.15, colors=pal2)
 dev.off()
+library(dplyr)
+ap.d %>%
+	arrange(desc(freq)) -> ap.d_sorted
 
-ap.d2 <- ap.d[-c(1:32),]
-png("wordcloud_version2.png", width=1280,height=800)
+ap.d_sorted[-c(1:100),] -> ap.d2
+
+png("Wykresy/wordcloud_version2.png", width=1280,height=800)
 wordcloud(ap.d2$word,ap.d2$freq, scale=c(8,.2),min.freq=3,
 					max.words=Inf, random.order=FALSE, rot.per=.15, colors=pal2)
 dev.off()

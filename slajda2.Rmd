@@ -1,0 +1,10 @@
+# więcej slajdów
+
+## taakslajdy
+
+## slajdy
+
+```{r}
+head(iris)
+```
+

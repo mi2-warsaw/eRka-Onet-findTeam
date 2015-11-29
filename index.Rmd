@@ -1,0 +1,18 @@
+---
+title: "`find()` Team !"
+subtitle: "eRka + Onet = Maraton Analizy Danych"
+author: "Marcin Kosiński, Michał Libura, Michał Stęchły"
+date: "28.11.2015"
+output:
+  slidy_presentation:
+    theme: cerulean
+---
+	
+```{r, child='slajda1.Rmd'}
+
+```
+
+```{r, child='slajda2.Rmd'}
+
+```
+

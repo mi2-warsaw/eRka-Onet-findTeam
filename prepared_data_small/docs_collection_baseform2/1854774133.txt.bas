@@ -1,0 +1,1 @@
+ten kobieta udowodniæ , ¿e jeœli naprawdê siê chcieæ , mo¿na schudn¹æ wiele kilogram i odmieniæ swój ¿yæ . ale to wymagaæ praca - nie tylko dieta , ale przed wszystko æwiczenie . zobaczyæ , jak z pulchny , a wiele przypadek têgi pani , staæ siê laska . ten zdjêcie zwalaæ z noga .

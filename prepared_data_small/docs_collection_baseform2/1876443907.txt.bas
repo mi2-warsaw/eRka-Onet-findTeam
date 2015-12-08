@@ -1,0 +1,1 @@
+- ksi¹dz ju¿ teraz mieæ mo¿liwoœæ rozgrzeszyæ aborcja , w szczególny przypadek - mówiæ ks . prof . ambro¿a skorupa z kula . wczoraj papie¿ franciszek upowa¿niæ wszystek kap³an do rozgrzeszyæ z grzech aborcja w czas wielki jubileusz mi³osierdza

@@ -1,0 +1,1 @@
+- chcieæ s³uchaæ , co oczekiwaæ od my polak . przez ostatni osiem rok nie byæ on s³uchaæ . byæ za to ci¹g³y pokrzykiwaæ , ustawiaæ , uprawiaæ siê wobec on pedagogika wstyd . wypominaæ siê my ksenofobia , a byæ bardzo tolerancyjny i otwa

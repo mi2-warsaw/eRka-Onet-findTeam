@@ -1,0 +1,1 @@
+- senator po nie powinien zgodziæ siê na referendum , który chcieæ prezydent andrze duda , ale g³osowaæ na " nie " trudno byæ uzasadniæ - mówiæ magdalena b³êdowski z krytyka polityczny . - jeœli zorganizowaæ " swój referendum " , to dlaczego teraz naró

@@ -1,0 +1,1 @@
+niezale¿nie od to , czy to efekt wypocz¹æ , czy zabieg kosmetyczny , ten gwiazda z impreza na impreza potrafiæ zmieniæ siê nie do poznaæ . opuchn¹æ policzek , wielki usta , wyg³adziæ zmarszczka , podkr¹¿ony oko – a¿ ciê¿ko uwierzyæ , ¿e zdjêcie przedstawiaæ ten sam osoba .

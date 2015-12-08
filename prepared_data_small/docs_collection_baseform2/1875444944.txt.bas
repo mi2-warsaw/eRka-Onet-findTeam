@@ -1,0 +1,1 @@
+tegoroczny festiwal filmowy w gdynia odbywaæ siê cieñ tragedia . nag³y œmieræ re¿yser , marcin wrona , poruszyæ wszystek . podczas fina³owy gala nie byæ czerwony dywan , gwiazda i zebraæ goœæ solidarnie przywdziaæ czerñ . koncert uœwietniæ stanis³aw celiñski swój wzruszaæ wykonaæ piosenka „ naprawdê jaki byæ , nie wiedzieæ nikt ” ku czeœæ pamiêæ re¿yser

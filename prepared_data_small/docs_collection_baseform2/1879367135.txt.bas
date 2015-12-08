@@ -1,0 +1,1 @@
+- korekta dotyczyæ wzmacnianie wschodni flanka musieæ siê odbywaæ w wspó³praca z niemiec , inaczej byæ groŸba roz³am w nato - uwa¿aæ wojciecha lorenz z pismo . jak zaznaczaæ , w polski interes byæ dobry stosunek z berlin , mimo ró¿nica dotyczyæ obecno

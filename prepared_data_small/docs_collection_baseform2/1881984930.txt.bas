@@ -1,0 +1,1 @@
+- polski ³y¿wiarstwo szybki gratulowaæ znakomity wynik . byæ pod on wra¿enie . zdobyæ medal w igrzysko w vancouver i soczia œwiadczyæ , ¿e dyscyplina z ka¿dy rok rozwijaæ - mówiæ na ostatni posiedzieæ zarz¹d pz³s jaros³awiæ id , sekretar

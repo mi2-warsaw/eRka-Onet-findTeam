@@ -1,9 +1,9 @@
-mainPath = "/Users/a/eRka-Onet-findTeam"
-codesPath = "/Users/a/eRka-Onet-findTeam/R_codes"
-dataToSavePath = "/Users/a/eRka-Onet-findTeam/Dane/"
-dataToLoadPath = "/Users/a/eRka-Onet-findTeam/prepared_data_small/"
-predictionPath = "/Users/a/eRka-Onet-findTeam/Predykcje/"
-plotsPath = "/USers/a/eRka-Onet-findTeam/Wykresy/"
+mainPath = "/Users/a/Moje/Nauka/eRka_Onet_findTeam_clean"
+codesPath = paste(mainPath,"/R_codes",sep="")
+dataToSavePath = paste(mainPath,"/Dane",sep="")
+dataToLoadPath = paste(mainPath,"/prepared_data_small/",sep="")
+predictionPath = paste(mainPath,"/Predykcje/",sep="")
+plotsPath = paste(mainPath,"/Wykresy/",sep="")
 
 testRunBool = FALSE
 

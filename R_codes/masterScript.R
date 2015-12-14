@@ -1,6 +1,6 @@
 mainPath = "/Users/a/Moje/Nauka/eRka_Onet_findTeam_clean"
 codesPath = paste(mainPath,"/R_codes",sep="")
-dataToSavePath = paste(mainPath,"/Dane",sep="")
+dataToSavePath = paste(mainPath,"/Dane/",sep="")
 dataToLoadPath = paste(mainPath,"/prepared_data_small/",sep="")
 predictionPath = paste(mainPath,"/Predykcje/",sep="")
 plotsPath = paste(mainPath,"/Wykresy/",sep="")
@@ -19,8 +19,8 @@ saveObjectToFile <- function(object){
 	save(object, file = paste(dataToSavePath, deparse(substitute(object)), ".rda",sep=""))
 }
 
-savePredToFile <- function(predictions){	
-	save(predictions, file = paste(predictionPath, deparse(substitute(predictions)), ".rda",sep=""))
+savePredToFile <- function(predictions){
+        write.table(predictions, file = paste(predictionPath, deparse(substitute(predictions)), ".csv",sep=""), quote=FALSE, row.names=FALSE)
 }
 
 pkgLoad <- function(x)
@@ -37,7 +37,8 @@ pkgLoad <- function(x)
 
 sourceWithSettingWD("01_getText.R")
 
-save(DTM, file = paste(dataToLoadPath,"/DTM.rda",sep=""))
+saveObjectToFile(DTM)
+saveObjectToFile(corpusFull)
 
 sourceWithSettingWD("02_toDFtoMatrix.R")
 
@@ -45,6 +46,13 @@ saveObjectToFile(DTM95)
 saveObjectToFile(DTM99)
 saveObjectToFile(DTM_df)
 saveObjectToFile(corpus)
+
+otherAttributes <-c()
+
+sourceWithSettingWD("03_addEndSignRatio.R")
+sourceWithSettingWD("03_addNumberRatio.R")
+sourceWithSettingWD("03_addTextLength.R")
+attributes_matrix <- cbind(DTM_df, otherAttributes)
 
 #TODO: Warningi, że za duże i nie da się wyplotować!
 #U mnie mieliło przez ponad godzinę i musiałem wyłączyć.
@@ -56,19 +64,13 @@ saveObjectToFile(corpus)
 #TODO: inner_join wywala warningi
 sourceWithSettingWD("04_addTags.R")
 
-saveObjectToFile(DTM_tagged)
-saveObjectToFile(DTM_tagged_clean)
+saveObjectToFile(data_tagged_clean)
 
 sourceWithSettingWD("05_splitData.R")
 
 saveObjectToFile(train)
 saveObjectToFile(test)
 
-sourceWithSettingWD("06_getOtherParameters.R")
-
-saveObjectToFile(additionalFeatures)
-saveObjectToFile(trainExtended)
-saveObjectToFile(testExtended)
 #dev.off() wywalał mi errora: QuartzBitmap_Output - unable to open file 'Wykresy/Boruta_selection.png'
 #Zakomentowałem.
 #Jeśli ustawię testRunBool na true to dostaję taki error:
@@ -111,3 +113,7 @@ savePredToFile(lda_pred_to_file)
 
 sourceWithSettingWD("08_RandomForest.R")
 savePredToFile(RF_pred_to_file)
+
+sourceWithSettingWD("09_combineResults.R")
+savePredToFile(final_predictions_vote)
+savePredToFile(final_predictions_mean)

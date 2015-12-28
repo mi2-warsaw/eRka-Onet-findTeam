@@ -10,5 +10,4 @@ colnames(mat) <- DTM95$dimnames$Terms
 
 as.data.frame(as.matrix(mat)) -> DTM_df
 
-mat <- sparseMatrix(i=DTM$i, j=DTM$j, x=DTM$v, dims=c(DTM$nrow, DTM$ncol))
-as.data.frame(as.matrix(mat)) -> DTM_df_full
+DTM_matrix_full <- sparseMatrix(i=DTM$i, j=DTM$j, x=DTM$v, dims=c(DTM$nrow, DTM$ncol))

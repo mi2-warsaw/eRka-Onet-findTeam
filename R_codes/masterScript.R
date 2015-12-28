@@ -1,7 +1,7 @@
 mainPath = "/Users/a/Moje/Nauka/eRka_Onet_findTeam_clean"
 codesPath = paste(mainPath,"/R_codes",sep="")
 dataToSavePath = paste(mainPath,"/Dane/",sep="")
-dataToLoadPath = paste(mainPath,"/prepared_data_small/",sep="")
+dataToLoadPath = paste(mainPath,"/prepared_data2/",sep="")
 predictionPath = paste(mainPath,"/Predykcje/",sep="")
 plotsPath = paste(mainPath,"/Wykresy/",sep="")
 

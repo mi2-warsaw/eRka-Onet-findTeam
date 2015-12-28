@@ -1,2 +1,2 @@
-textLength <- rowSums(DTM_df_full)
+textLength <- rowSums(DTM_matrix_full)
 otherAttributes <- cbind(otherAttributes, textLength)	

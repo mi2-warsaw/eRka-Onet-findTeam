@@ -6,12 +6,19 @@ getPunctuation <- function(x)
         regmatches(x,m)
 }
 getEndSignTable <- function(text_vector){
+        if(text_vector==""){
+                text_vector<-"."
+        }
         text_vector <- substring(text_vector, seq(1,nchar(text_vector),1), seq(1,nchar(text_vector),1))
         text_punctuation_or_not <- regexpr(pattern="[[:punct:]]", text_vector)
         text_punctuation_positions <- which(text_punctuation_or_not %in% 1)
         punctuation_vector <- text_vector[text_punctuation_positions]
         
         punctuation_table <- as.data.frame(table(punctuation_vector))
+        if(dim(punctuation_table)[1]==0){
+                punctuation_table  <- as.data.frame(table(c(".")))
+        }
+        
         names(punctuation_table) <- c("sign", "freq")
         end_sign_table <- subset(punctuation_table,punctuation_table$sign %in% c(".", "!", "?","..."))
         return (end_sign_table)

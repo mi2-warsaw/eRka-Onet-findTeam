@@ -1,6 +1,9 @@
 #Getting Numbers
 
 getNumberCount <- function(text_vector){
+        if(text_vector==""){
+                text_vector<-"."
+        }
         text_vector <- substring(text_vector, seq(1,nchar(text_vector),1), seq(1,nchar(text_vector),1))
         text_number_or_not <- regexpr(pattern="[[:digit:]]", text_vector)
         text_number_positions <- which(text_number_or_not %in% 1)
@@ -25,6 +28,6 @@ for (i in 1:dim(DTM)[1]){
         numberCount <- c(numberCount, getNumberCount(text_vector))
 }
 
-textLength <- rowSums(DTM_df_full)
+textLength <- rowSums(DTM_matrix_full)
 numberRatio <- numberCount/textLength
 otherAttributes <- cbind(otherAttributes,numberRatio)	

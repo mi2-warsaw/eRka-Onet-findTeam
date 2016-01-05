@@ -6,6 +6,7 @@ getPunctuation <- function(x)
         regmatches(x,m)
 }
 getEndSignTable <- function(text_vector){
+        
         if(text_vector==""){
                 text_vector<-"."
         }
@@ -21,6 +22,10 @@ getEndSignTable <- function(text_vector){
         
         names(punctuation_table) <- c("sign", "freq")
         end_sign_table <- subset(punctuation_table,punctuation_table$sign %in% c(".", "!", "?","..."))
+        if(dim(end_sign_table)[1]==0){
+                end_sign_table  <- as.data.frame(table(c(".")))
+                names(end_sign_table) <- c("sign", "freq")
+        }
         return (end_sign_table)
 }
 countRatio <- function(end_sign_table){
@@ -45,6 +50,7 @@ endSignRatio <-c()
 for (i in 1:dim(DTM)[1]){
         text_vector <- unlist(get("content",corpusFull)[i])[1]
         endSignRatio <- c(endSignRatio, getTabloidSignRatio(text_vector))
-}	
+}
+
 
 otherAttributes <- cbind(otherAttributes, endSignRatio)

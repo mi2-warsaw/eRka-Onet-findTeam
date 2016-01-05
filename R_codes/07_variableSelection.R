@@ -3,7 +3,6 @@
 pkgLoad("Boruta")
 pkgLoad("dplyr")
 dataForBoruta <- train[!(colnames(train) %in% colnames(otherAttributes))]
-dataForBoruta <- dplyr::select(dataForBoruta, -Classes)
 dataForBoruta <- dplyr::select(dataForBoruta, -uuid_h2)
 dataForBoruta <- dataForBoruta[complete.cases(dataForBoruta), ]
 Boruta.mod <- Boruta(Classes~., data = dataForBoruta)

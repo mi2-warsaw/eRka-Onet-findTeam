@@ -8,8 +8,8 @@ getNumberCount <- function(text_vector){
         text_number_or_not <- regexpr(pattern="[[:digit:]]", text_vector)
         text_number_positions <- which(text_number_or_not %in% 1)
         number_vector <- text_vector[text_number_positions]
-        
         number_table <- as.data.frame(table(number_vector))
+        
         if(dim(number_table)[1]==0){
                 return(0)
         }
@@ -30,4 +30,6 @@ for (i in 1:dim(DTM)[1]){
 
 textLength <- rowSums(DTM_matrix_full)
 numberRatio <- numberCount/textLength
+numberRatio[is.nan(numberRatio)] = 0
+numberRatio[is.infinite(numberRatio)] = 0
 otherAttributes <- cbind(otherAttributes,numberRatio)	

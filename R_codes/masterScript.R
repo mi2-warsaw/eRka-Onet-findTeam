@@ -5,7 +5,7 @@ dataToLoadPath = paste(mainPath,"/prepared_data2/",sep="")
 predictionPath = paste(mainPath,"/Predykcje/",sep="")
 plotsPath = paste(mainPath,"/Wykresy/",sep="")
 
-testRunBool = FALSE
+testRunBool = TRUE
 
 sourceWithSettingWD <- function(scriptName){
 	setwd(codesPath)

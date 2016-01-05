@@ -7,4 +7,7 @@ glm_pred_to_file <- cbind(levels(test_IDs), glm_pred)
 colnames(glm_pred_to_file) <- c("id", "prediction")
 
 
+if(testRunBool){
+        GLM_accuracy <- sum(round(glm_pred) == test_labels)/length(test_labels)
+}
 

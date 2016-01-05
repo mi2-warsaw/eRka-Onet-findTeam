@@ -12,6 +12,5 @@ colnames(svm_pred_to_file) <- c("id", "prediction")
 
 
 if(testRunBool){
-	svm_test_pred <- ifelse(svm_pred_prob>0.5,1,0)
-	sum(svm_test_pred == test_labels)/length(test_labels)
+        svm_accuracy <- sum(round(svm_pred) == test_labels)/length(test_labels)
 }

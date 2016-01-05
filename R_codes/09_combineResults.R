@@ -36,14 +36,16 @@ for(i in 1:dim(test)[1]){
         if(currentPrediction<3){
                 new_pred <- c(knn_pred_to_file[i,1], "0")
         }
-        else if(currentPrediction>3){
+        else if(currentPrediction>=3){
                 new_pred <- c(knn_pred_to_file[i,1], "1")
-        }
-        else if(currentPrediction==3){
-                new_pred <- c(knn_pred_to_file[i,1], knn_pred_to_file[i,2])
         }
         final_predictions_vote <- rbind(final_predictions_vote, new_pred)
 }
 
 colnames(final_predictions_vote) <- c("uuid_h2", "wsp_tab")
 
+
+if(testRunBool){
+        final_predictions_mean_accuracy <- sum(round(strtoi(final_predictions_mean[,2])) == test_labels)/length(test_labels)
+        final_predictions_vote_accuracy <- sum(round(strtoi(final_predictions_vote[,2])) == test_labels)/length(test_labels)
+}

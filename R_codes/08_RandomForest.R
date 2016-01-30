@@ -5,3 +5,7 @@ RF_pred = predict(RF, newdata = test, type = "response")
 
 RF_pred_to_file <- cbind(levels(test_IDs), RF_pred)
 colnames(RF_pred_to_file) <- c("id", "prediction")
+
+if(testRunBool){
+        RF_accuracy <- sum(round(RF_pred) == test_labels)/length(test_labels)
+}

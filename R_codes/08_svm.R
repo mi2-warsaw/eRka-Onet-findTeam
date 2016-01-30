@@ -10,7 +10,6 @@ svm_pred <- attr(svm_pred_raw,"probabilities")[,2]
 svm_pred_to_file <- cbind(levels(test_IDs), svm_pred)
 colnames(svm_pred_to_file) <- c("id", "prediction")
 
-
 if(testRunBool){
         svm_accuracy <- sum(round(svm_pred) == test_labels)/length(test_labels)
 }

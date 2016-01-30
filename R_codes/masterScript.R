@@ -1,7 +1,7 @@
 mainPath = "/Users/a/Moje/Nauka/eRka_Onet_findTeam_clean"
 codesPath = paste(mainPath,"/R_codes",sep="")
 dataToSavePath = paste(mainPath,"/Dane/",sep="")
-dataToLoadPath = paste(mainPath,"/prepared_data2/",sep="")
+dataToLoadPath = paste(mainPath,"/prepared_data_small/",sep="")
 predictionPath = paste(mainPath,"/Predykcje/",sep="")
 plotsPath = paste(mainPath,"/Wykresy/",sep="")
 
@@ -17,6 +17,7 @@ sourceWithSettingWD <- function(scriptName){
 
 saveObjectToFile <- function(object){
 	save(object, file = paste(dataToSavePath, deparse(substitute(object)), ".rda",sep=""))
+        print(deparse(substitute(object)))
 }
 
 savePredToFile <- function(predictions){
@@ -56,7 +57,7 @@ attributes_matrix <- cbind(DTM_df, otherAttributes)
 
 #TODO: Warningi, że za duże i nie da się wyplotować!
 #U mnie mieliło przez ponad godzinę i musiałem wyłączyć.
-#sourceWithSettingWD("03_wordcloud_graphs.R")
+#sourceWithSettingWD("03_wordcloud_graphs.R")   
 
 #saveObjectToFile(ap.d_sorted)
 #save(ap.d_sorted, file = "Aplikacja/ap.d_sorted.rda")
@@ -117,3 +118,5 @@ savePredToFile(RF_pred_to_file)
 sourceWithSettingWD("09_combineResults.R")
 savePredToFile(final_predictions_vote)
 savePredToFile(final_predictions_mean)
+
+sourceWithSettingWD("10_ROC_curves.R")

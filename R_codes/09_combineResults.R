@@ -36,8 +36,11 @@ for(i in 1:dim(test)[1]){
         if(currentPrediction<3){
                 new_pred <- c(knn_pred_to_file[i,1], "0")
         }
-        else if(currentPrediction>=3){
+        else if(currentPrediction>3){
                 new_pred <- c(knn_pred_to_file[i,1], "1")
+        }
+        else if(currentPrediction==3){
+                new_pred <- c(RF_pred_to_file[i,1], round(as.numeric(RF_pred_to_file[i,2])))
         }
         final_predictions_vote <- rbind(final_predictions_vote, new_pred)
 }
